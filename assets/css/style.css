@@ -1,0 +1,290 @@
+/* Custom styles for Claudio Geyer's academic page */
+/* Inspired by UFRGS design */
+
+/* Variables as CSS custom properties */
+:root {
+    --primary-color: #2c5aa0;
+    --secondary-color: #1a4480;
+    --accent-color: #ff6b35;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-title a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.site-title a:hover {
+    color: var(--accent-color);
+}
+
+.site-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.site-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.site-nav a:hover,
+.site-nav a.current {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--accent-color);
+}
+
+/* Main content */
+.site-main {
+    min-height: calc(100vh - 200px);
+    padding: 2rem 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    background: var(--light-gray);
+    border-radius: 8px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-content h1:first-child,
+.page-content h2:first-child,
+.page-content h3:first-child {
+    margin-top: 0;
+}
+
+.page-content h1 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.page-content h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.3rem;
+}
+
+.page-content h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+}
+
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+    color: var(--secondary-color);
+}
+
+.page-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.page-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.page-content a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.page-content ul,
+.page-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.page-content li {
+    margin-bottom: 0.5rem;
+}
+
+.page-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    background: var(--light-gray);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+.page-content strong {
+    color: var(--primary-color);
+}
+
+/* Academic sections */
+.academic-section {
+    background: var(--light-gray);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact-info {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.contact-info strong {
+    color: var(--primary-color);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .page-header {
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .academic-section {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .site-nav a {
+        text-align: center;
+    }
+    
+    .page-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .page-content h2 {
+        font-size: 1.3rem;
+    }
+}
+

@@ -1,0 +1,32 @@
+title: "Cláudio Geyer - Instituto de Informática"
+description: "Página acadêmica do Professor Cláudio Geyer do Instituto de Informática da UFRGS."
+url: "https://geyer.inf.ufrgs.br"
+
+# Site settings
+lang: "pt-BR"
+email: "geyer@inf.ufrgs.br"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Sobre
+    url: /about/
+  - title: Contato
+    url: /contact/
+  - title: Ensino
+    url: /teaching/
+  - title: Pesquisa
+    url: /research/
+
+

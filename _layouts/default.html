@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'pt-BR' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </div>
+                <nav class="site-nav">
+                    {% for item in site.navigation %}
+                    <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="current"{% endif %}>{{ item.title }}</a>
+                    {% endfor %}
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            {{ content }}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Todos os direitos reservados.</p>
+                <p>Instituto de Informática - UFRGS</p>
+                {% if site.email %}
+                <p>Contato: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
